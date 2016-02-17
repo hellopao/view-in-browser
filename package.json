@@ -1,0 +1,43 @@
+{
+  "name": "view-in-browser",
+  "displayName": "View In Browser",
+  "description": "view a file in system's default browser",
+  "version": "0.0.1",
+  "publisher": "qinjia",
+  "engines": {
+    "vscode": "^0.10.6"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.viewInBrowser"
+  ],
+  "main": "./out/src/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.viewInBrowser",
+        "title": "View In Browser"
+      }
+    ],
+    "keybindings": [{
+        "command": "extension.viewInBrowser",
+        "key": "ctrl+f1",
+        "mac": "cmd+f1",
+        "when": "editorTextFocus"
+    }]
+  },
+  "scripts": {
+    "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+    "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "devDependencies": {
+    "typescript": "^1.7.5",
+    "vscode": "^0.11.0"
+  },
+  "dependencies": {
+    "open": "0.0.5"
+  }
+}
