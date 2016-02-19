@@ -1,5 +1,5 @@
 ## View In Browser
-view a html file in system's default browser
+extension for vscode to view a html file in system's default browser
 
 ## usage 
 
