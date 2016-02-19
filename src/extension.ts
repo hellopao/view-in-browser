@@ -14,6 +14,8 @@ export function activate(context: vscode.ExtensionContext) {
         
         if (/\.(html|htm|shtml|xhtml)/.test(ext)) {
             open(`file:///${file}`);
+        } else {
+            vscode.window.showInformationMessage('support html file only!');
         }
 	});
 

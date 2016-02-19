@@ -1,9 +1,9 @@
 {
   "name": "view-in-browser",
   "displayName": "View In Browser",
-  "description": "view a file in system's default browser",
+  "description": "view a html file in system's default browser",
   "icon": "images/icon.png",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "qinjia",
   "engines": {
     "vscode": "^0.10.6"
