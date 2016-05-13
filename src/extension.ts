@@ -4,6 +4,7 @@ import * as vscode from 'vscode';
 import * as path from "path";
 
 const open = require('open');
+const os = require('os');
 
 export function activate(context: vscode.ExtensionContext) {
         
@@ -19,7 +20,11 @@ export function activate(context: vscode.ExtensionContext) {
         const ext = path.extname(file);
         
         if (/^\.(html|htm|shtml|xhtml)$/.test(ext)) {
-            open(`file:///${file}`);
+            if(os.platform() == 'linux'){
+                    open(`file:///${file}`,'x-www-browser');
+                }else{
+                    open(`file:///${file}`);
+                }
         } else {
             vscode.window.showInformationMessage('support html file only!');
         }
