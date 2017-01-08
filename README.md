@@ -1,11 +1,24 @@
 ## View In Browser
-extension for vscode to view a html file in system's default browser
-
-## usage 
-
-### command
+Extension for vscode to view a html file in a browser. 
+## Usage 
+Use command or context menu in the explorer.
+### Command
     1. Open the command list (Press F1 or Ctrl + Shift + P)
     2. Select `View In Browser`
-
-### keybindings
+### Configuration
+You can select what browser you want to open html file with. Default value is your default browser.
+Add to User or Workspace settings:
+``` 
+{
+    "view-in-browser.customBrowser": "chrome"
+}
+```
+### Keybindings
     1. Press Ctrl + F1
+### Supported OS
+    Windows, Linux, MacOS
+### Supported browsers
+Supported browsers by [node-open](https://github.com/pwnall/node-open). 
+```
+Mozilla, Chrome, Internet Explorer, Safari
+```
