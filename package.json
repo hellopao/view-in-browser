@@ -3,15 +3,15 @@
   "displayName": "View In Browser",
   "description": "view a html file in system's default browser",
   "icon": "images/icon.png",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publisher": "qinjia",
   "engines": {
     "vscode": "^0.10.6"
   },
   "categories": [
     "Other"
-  ], 
-  "license" : "MIT",
+  ],
+  "license": "MIT",
   "keywords": [
     "view in browser"
   ],
@@ -28,18 +28,38 @@
   ],
   "main": "./out/src/extension",
   "contributes": {
-    "commands": [
-      {
-        "command": "extension.viewInBrowser",
-        "title": "View In Browser"
+    "commands": [{
+      "command": "extension.viewInBrowser",
+      "title": "View In Browser"
+    }],
+    "configuration": {
+      "type": "object",
+      "title": "View in Browser configuration",
+      "properties": {
+        "view-in-browser.customBrowser": {
+          "type": "string",
+          "description": "Changes systems default explorer to a specific one. Based on https://github.com/pwnall/node-open",
+          "enum": [
+            "iexplore",
+            "mozilla",
+            "chrome",
+            "safari"
+          ]
+        }
       }
-    ],
+    },
     "keybindings": [{
+      "command": "extension.viewInBrowser",
+      "key": "ctrl+f1",
+      "mac": "cmd+f1",
+      "when": "editorTextFocus"
+    }],
+    "menus": {
+      "explorer/context": [{
         "command": "extension.viewInBrowser",
-        "key": "ctrl+f1",
-        "mac": "cmd+f1",
-        "when": "editorTextFocus"
-    }]
+        "group": "navigation@1"
+      }]
+    }
   },
   "scripts": {
     "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
