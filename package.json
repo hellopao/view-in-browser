@@ -28,10 +28,12 @@
   ],
   "main": "./out/src/extension",
   "contributes": {
-    "commands": [{
-      "command": "extension.viewInBrowser",
-      "title": "View In Browser"
-    }],
+    "commands": [
+      {
+        "command": "extension.viewInBrowser",
+        "title": "View In Browser"
+      }
+    ],
     "configuration": {
       "type": "object",
       "title": "View in Browser configuration",
@@ -48,17 +50,21 @@
         }
       }
     },
-    "keybindings": [{
-      "command": "extension.viewInBrowser",
-      "key": "ctrl+f1",
-      "mac": "cmd+f1",
-      "when": "editorTextFocus"
-    }],
-    "menus": {
-      "explorer/context": [{
+    "keybindings": [
+      {
         "command": "extension.viewInBrowser",
-        "group": "navigation@1"
-      }]
+        "key": "ctrl+f1",
+        "mac": "cmd+f1",
+        "when": "editorTextFocus"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "extension.viewInBrowser",
+          "group": "navigation@1"
+        }
+      ]
     }
   },
   "scripts": {
@@ -67,6 +73,7 @@
     "postinstall": "node ./node_modules/vscode/bin/install"
   },
   "devDependencies": {
+    "mac-open": "^0.1.3",
     "typescript": "^1.7.5",
     "vscode": "^0.11.0"
   },
