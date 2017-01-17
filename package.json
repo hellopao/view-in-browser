@@ -3,7 +3,7 @@
   "displayName": "View In Browser",
   "description": "view a html file in system's default browser",
   "icon": "images/icon.png",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "publisher": "qinjia",
   "engines": {
     "vscode": "^0.10.6"
@@ -73,11 +73,11 @@
     "postinstall": "node ./node_modules/vscode/bin/install"
   },
   "devDependencies": {
-    "mac-open": "^0.1.3",
     "typescript": "^1.7.5",
     "vscode": "^0.11.0"
   },
   "dependencies": {
+    "mac-open": "^0.1.3",
     "open": "0.0.5"
   }
 }
